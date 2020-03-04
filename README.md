@@ -1,32 +1,28 @@
 # Exploring the Radio Spectrum for News
-SRCCON 2017 - Friday August 4, 2017
-Minneapolis, MN
+⚜️ NICAR 2020 ⚜️ - Friday March 6, 2020
+New Orleans, LA
 -------------------------------------
 Jon Keegan   @jonkeegan
-Visual Journalist * Senior Research Fellow
-Tow Center for Digital Journalism
-Columbia University
+The Markup   keegan@themarkup.org
 
-This repo: http://github.com/jonkeegan/exploring-the-spectrum  
-Slides: http://bit.ly/radio-news-slides  
-Notes/links: http://bit.ly/radio-news  
-Etherpad: https://etherpad.opennews.org/p/SRCCON2017-radio-spectrum
+This repo: https://github.com/jonkeegan/nicar20-radio 
+Slides: http://bit.ly/nicar20-radio
+
 -------------------------------------
 
 ### Quick plug for where I work:
-The Tow Center for Digital Journalism
-* Based at Columbia University’s Graduate School of Journalism
-* Provide journalists with skills and knowledge to lead the future of digital journalism
-* Serve as a research and development center for journalism
-* Explore how technology is changing journalism, its practice, and its consumption
-* Research emerging areas, develop teaching methods and courses
-* Fellowships for academics, journalists, and technologists
-http://facebook.com/towcenter
-http://twitter.com/towcenter
-http://towcenter.org
+### The Markup
+* Big Tech Is Watching You. We’re Watching Big Tech.
+* A new, non-profit, non-partisan investigative newsroom covering technology
+* Investigating how technology influences our society
+* The Markup Method: Build > Bulletproof > Show our work
+
+
+http://twitter.com/themarkup
+http://themarkup.org
 
 -------------------------------------
-Whenever I encounter some cool new technology – usually one that has just become very cheap and available – I get very excited about the possibilities and look for ways I can use it in my work. For me this was the case with 3D printing, 3D scanners, cheap thermal cameras and software defined radio. So I am trying to instill in all of you this idea * look for unusual, novel ways to look for story ideas. Sometimes, behind the obvious uses, there are are creative ways technology can be used to tell stories.
+Whenever I encounter some cool new technology – usually one that has just become very cheap and available – I get very excited about the possibilities and look for ways I can use it in my work. For me this was the case with 3D printing, 3D scanners, cheap thermal cameras and software defined radio. So I am trying to instill in all of you this idea *look for unusual, novel ways to look for story ideas*. Sometimes, behind the obvious uses, there are creative ways technology can be used to tell stories.
 
 ### Questions journalists should ask about new technologies
 * Who has had access to this technology in the past?
@@ -35,7 +31,7 @@ Whenever I encounter some cool new technology – usually one that has just bec
 * What impact will this technology have on society? To my readers?
 * How have other journalists used this technology before?
 -------------------------------------
-So this was exactly what I was thinking when I heard about software defined radio. I first heard about this from my most trusted source for cool technology, my Dad Larry Keegan. He's 88, an electrical engineer, pilot, poet, weather nut and HAM radio operator (WA1PII) among many other things. It immediately struck my imagination, and let me see and understand the radio spectrum in a new, visual way. Because this technology was cheap and pretty easy to use, I now had a very cool lens into this weird invisible world around us – a theme that I keep coming back to in my work.
+So this was exactly what I was thinking when I heard about software defined radio. I first heard about this from my most trusted source for cool technology, my Dad Larry Keegan. He's 91, an electrical engineer, pilot, poet, weather nut and HAM radio operator (WA1PII) among many other things. It immediately struck my imagination, and let me see and understand the radio spectrum in a new, visual way. Because this technology was cheap and pretty easy to use, I now had a very cool lens into this weird invisible world around us – a theme that I keep coming back to in my work.
 
 ### Why explore the radio spectrum for news?
 
@@ -43,11 +39,15 @@ So this was exactly what I was thinking when I heard about software defined radi
 * The radio spectrum is an invisible, crucial national asset that is poorly understood
 * We are surrounded by devices that use the radio spectrum, and it is powering our wireless world
 -------------------------------------
-### FCC Spectrum allocation chart: https://www.ntia.doc.gov/files/ntia/publications/2003-allochrt.pdf
+### FCC Spectrum allocation chart
+![alt text](fcc-specturm.png "Logo Title Text 1")
+https://www.ntia.doc.gov/files/ntia/publications/january_2016_spectrum_wall_chart.pdf
+
+
 
 The radio spectrum is huge, confusing and full of mystery. Licenses to use tiny slices of it are auctioned off for billions of dollars by the FCC. It's very tightly regulated and all of this is flying through the air around us. It's pretty crazy to think about. New cars come equipped with dozens of radios aboard, as well as every THING in the Internet of Things. The radio spectrum is powering our futuristic wireless world. This chart shows how carefully these tiny slices are managed so as to not bleed over into one another, which today could have life or death consequences (such as implanted medical devices with radio telemetry, transport navigation and tracking, etc).
 
-Definition: Software defined radio - In a traditional physical radio, hardware components adjust the frequency tuning and modulation of the radio signals for you listening pleasure. In SDR, these components are replaced by software. SDR receivers have an lower and upper tuning frequency limit, and within that, they have a bandwidth of frequency that they can sample all at once. You can slide that bandwidth up or down within the upper and lower limits, and SEE where there is voice or data being transmitted within the swath you are observing.
+Definition: Software defined radio - In a traditional physical radio, hardware components adjust the frequency tuning and modulation of the radio signals for your listening pleasure. In SDR, these components are replaced by software. SDR receivers have a lower and upper tuning frequency limit, and within that, they have a bandwidth of frequency that they can sample all at once. You can slide that bandwidth up or down within the upper and lower limits, and SEE where there is voice or data being transmitted within the swath you are observing.
 
 For a long time, the expensive tools to explore the spectrum were exclusively the domain of technicians, scientists, engineers and HAM radio operators. But with the release of a particular USB TV tuner dongle in Europe (and others like it), things started to change. Hobbyists embraced this cheap ($20) USB stick once they realized they could use its software defined radio capabilities to investigate and visualize a wide swath of the radio spectrum. Open source libraries popped up, waterfall visualizers and signal processing tools quickly appeared on the scene. Today, there is a large, active community of hobbyists and hackers who are using these tools to explore – and sometimes exploit – the radios around us in our daily lives. Many of these spectrum explorers have reversed engineered their garage door openers, or discovered gaping security holes in products designed with the assumption that "civilians" would not have access, nor would they care.
 
@@ -57,16 +57,48 @@ For a long time, the expensive tools to explore the spectrum were exclusively th
 Quartz's David Yanofsky built a DIY antenna hooked up to a RaspberryPi to log the ADS-B transmissions from private helicopters flying into the Davos conference in Switzerland.
 https://qz.com/600590/we-brought-an-antenna-to-davos-to-track-private-air-travel-and-heres-what-we-found/
 
+---
+
 BuzzFeed's Peter Aldhous didn't use SDR hardware himself, but he did use ADS-B data from FlightAware to find FBI and DHS surveillance aircraft circling over American cities, and just this week published another story showing how the US Marshals used aircraft mounted Stingrays to locate narco kingpin "El Chapo" in Mexico.
 https://www.buzzfeed.com/peteraldhous/spies-in-the-skies?utm_term=.kbkjgKvb2#.egQ2qNnyG
 https://www.buzzfeed.com/peteraldhous/us-marshals-spy-plane-over-mexico?utm_term=.eiA2DawBp8
 http://buzzfeednews.github.io/2016-04-federal-surveillance-planes/analysis.html
 
+---
+
+
 ProPublica collaborated with Gizmodo to peer through the radio spectrum around President Trump's Mar-a-Lago resort in Florida. Using an external directed antenna, they were able to surveil the Wi-Fi network of the resort, and found weak security, and a number of unsecured networked devices that could be compromised and used for surveillance by adversaries or malicious hackers.
 https://www.propublica.org/article/any-half-decent-hacker-could-break-into-mar-a-lago
 
+---
+
+
 While not used in a specific story, ProPublica's Jeremy Merrill created a cool SDR setup to identify the planes flying over his home in Brooklyn, and answering on a LED display his question of "I wonder where that plane is coming from?".
 http://jeremybmerrill.com/blog/2016/01/flyover.html
+
+---
+
+
+Dictator Alert
+Investigative journalists Emmanuel Freudenthal (@EmmanuelFreuden), based in East Africa, and François Pilet (@FrancoisPilet), based in Switzerland started a project called "Dictator Alert" that sifts through public ADS-B transponder data from https://adsbexchange.com/ to circumvent the commercial censoring found on flightaware.com and flightradar24.com. They maintain a list of the tail numbers of aircraft known to belong to authoritarian regimes. When a flight of one of these planes is detected, it alerts the site, asd the Twitter bot. 
+https://dictatoralert.org/
+
+---
+
+
+Marc DaCosta, the co-founder of Enigma has done lots of interesting journalism-adjacent  projects using SDR and code. 
+DaCosta was interested in the surveillance infrastructure being deployed along the U.S. Mexico border. Using the publicly available FCC license database, he examined the licenses granted under the FCC's Experimental License System, which allows for experimental use of transmitters for research and development. 
+
+Pulling these experimental licenses along the path of the border yielded a list of security contractors deploying an interesting array of experimental radio surveillance tools.  
+
+https://github.com/marcdacosta/border-radio-investigation
+
+The tool which DaCosta created to do these geospatial queries of the FCC database is also available (for use with PostGIS).
+https://github.com/marcdacosta/spectrum-wrangler
+
+You may have heard of how SDR devices can track the ADS-B transponders of aircraft, but did you know that ships at sea have a similar system? It's called AIS, and you can also read these signals using any SDR device. To decode those messages, DaCosta created a tool called Ambient Shipping which allows your SDR device to capture the messages coming from ships you are near (line of sight), and then join the identifier of the ship to its cargo manifest.
+
+https://github.com/marcdacosta/ambient-shipping
 
 -------------------------------------
 ### RTL-SDR Dongle (RTL2832U)
@@ -88,12 +120,12 @@ http://jeremybmerrill.com/blog/2016/01/flyover.html
 * Amateur radio
 * Shortwave radio
 * IoT devices
-* Aircraft ADS-B transponders
+* Aircraft ADS-B / UAT transponders
 * Air traffic control tower communications
 * Maritime AIS transponders * Ships at sea
 * Train transponders (Front, middle, end of train)
-* NOAA Weather forecasts
-* NOAA Meteor-M Satellites
+* NOAA Weather satellite imagery
+* Russian Meteor-M Weather satellite imagery
 * GPS satellites
 * Amateur radio satellites
 * Emergency responder radio traffic
@@ -125,6 +157,11 @@ http://airspy.com/download/
 
 WebSDR - Browser-based remote SDR server browser. Watch signals from around the world
 http://websdr.org/
+
+PiSDR: Handy RaspberryPi image for all things SDR:
+https://pisdr.luigifreitas.me/
+
+
 -------------------------------------
 ### Related: Amateur radio (aka HAM radio)
 
@@ -166,7 +203,7 @@ Crowdsourced UNFILTERED ADS-B data:
 https://www.adsbexchange.com/
 
 FCC Radio spectrum chart:
-https://www.ntia.doc.gov/files/ntia/publications/2003-allochrt.pdf
+https://www.ntia.doc.gov/files/ntia/publications/january_2016_spectrum_wall_chart.pdf
 
 SDR Links:
 http://www.rtl-sdr.com/
@@ -175,6 +212,7 @@ https://www.reddit.com/r/RTLSDR/
 Identify weird signals you encounter:
 http://www.sigidwiki.com/wiki/Database
 https://www.reddit.com/r/signalidentification/
+http://jcrueda.com/?p=916
 
 Lookup the frequencies licensed for use in your area:
 https://www.radioreference.com/
@@ -186,51 +224,41 @@ Database of flight routes to be used in conjunction with ADS-B data:
 http://www.virtualradarserver.co.uk/FlightRoutes.aspx
 
 -------------------------------------
-### Minneapolis Ham repeaters
-https://www.repeaterbook.com/repeaters/location_search.php?state_id=27&type=city&loc=Minneapolis
-```
-53.37/52.37
-This repeater is a split site system with a transmit power of 75 watts and uses 1/2 wavelength antennas for both receive and transmit. Be sure to remember you will need a 100 Hz CTCSS tone for access. Give it a try!
+### New Orleans - Orleans Parish Louisiana Ham repeaters
+https://www.radioreference.com/apps/db/?ctid=1144&tab=ham
 
-147.21/147.81
-This repeater is now a single site system with a transmit power of 80 watts and a 100Hz CTCSS (PL) tone required for access. Full tone squelch is enabled (100 Hz CTCSS tone is both encoded and decoded)
+| Frequency | License | Type | Tone Out | Tone In | Alpha Tag | Description | Mode | Tag |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |   
+| 146.77500 | W5MCC | RM | 114.8 PL | | N.Orleans775 | New Orleans | FM | Ham |
+| 146.82000 | N5OZG | RM | 114.8 PL | | NewOrleans28 | New Orleans | FM | Ham |
+| 146.96000 | W5UNO | RM |  |  | N.Orleans 96 | New Orleans | FM | Ham |
+| 147.03000 | K5LZP | RM | 114.8 PL | | N.Orleans 03 | New Orleans, Downtown | FM | Ham |
+| 147.12000 | W4NDF | RM | 114.8 PL | | NewOrleans12 | New Orleans | FM | Ham |
+| 224.00000 | W5MCC | RM | 114.8 PL | | N.Orleans224 | New Orleans | FM  | Ham |
+| 421.25000 | WD0GIV | RM | | | N.Orleans 25 | New Orleans | FM  | Ham |
+| 444.57500 | N5OZG | RM | 114.8 PL | | N.Orleans575 | New Orleans | FM  | Ham |
+| 444.70000 | WB5HVV | RM | 114.8 PL | | N.Orleans700 | New Orleans  | FM  | Ham |
+| 444.77500 | N5OZG | RM | 114.8 PL | | Metairie 775 | Metairie  | FM  | Ham |
+| 444.82500 | W5MCC | RM | 114.8 PL | | N.Orleans825 | New Orleans  | FM  | Ham |
+| 444.95000 | N5UXT | RM | 114.8 PL | | New Orleans | New Orleans | FM | Ham |
+| 444.97500 | KB5AVY | RM | 114.8 PL | | N.Orleans975 | New Orleans  | FM  | Ham |
 
-224.54/222.94
-Access with a PL tone of 100.0 Hz, a surprisingly wide-coverage single-site machine.
-
-444.30/449.30
-With a PL tone of 114.8 Hz, on the 70cm band, this repeater has been replaced with a Yaesu System Fusion FM/C4FM DR-1 machine.
-```
 -------------------------------------
 
-### Minneapolis frequencies:
-https://www.radioreference.com/apps/db/?ctid=1336
-https://www.radioreference.com/apps/db/?aid=2541
+### New Orleans frequencies:
+Orleans Parish Louisiana https://www.radioreference.com/apps/db/?ctid=1144#cid-2837
+Schools / Universities https://www.radioreference.com/apps/db/?ctid=1144#cid-13046
+Businesses https://www.radioreference.com/apps/db/?aid=4275
+Federal https://www.radioreference.com/apps/db/?aid=8557
+Attractions https://www.radioreference.com/apps/db/?aid=759
 
-```
+
 NOAA Weather 162.540
-
-Frequency	Tone	Location	County	Call	 Use	Operational status
-145.1100-	PKT	Minneapolis	Hennepin	N0TL	OPEN	Unknown status
-145.1100-	DSTR	Minneapolis	Hennepin	KD0JOU	OPEN	ON-AIR
-145.3700-	107.2	Minneapolis	Hennepin	K0MSP	OPEN	ON-AIR
-146.7000-	127.3	Minneapolis	Hennepin	WC0HC	OPEN	ON-AIR
-147.0300+	114.8	Minneapolis	Hennepin	KD0JOU	OPEN	ON-AIR
-147.1500+	100.0	Minneapolis	Hennepin	W0YC	OPEN	OFF-AIR
-147.2700+	114.8	Minneapolis	Hennepin	WB0ZKB	OPEN	ON-AIR
-223.9000-	100.0	Minneapolis	Hennepin	KE0NA	OPEN	ON-AIR
-442.4000+	DMR	Minneapolis	Hennepin	KB0SVW	OPEN	ON-AIR
-442.4250+	DMR	Minneapolis, University of Minnesota	Hennepin	NH7CY	OPEN	ON-AIR
-442.6500+	DMR	Minneapolis, Riverview apartments	Hennepin	N0BVE	OPEN	ON-AIR
-443.0000+	118.8	Minneapolis, East Bank Univ. of MN	Hennepin	N0YNT	OPEN	OFF-AIR
-443.3000+	DMR	Minneapolis	Hennepin	N0NKI	OPEN	Testing
-443.5750+	114.8	Minneapolis	Hennepin	KD0WIL	OPEN	ON-AIR
-444.4250+	114.8	Minneapolis, U of Minn	Hennepin	KA0KMJ	OPEN	ON-AIR
-444.6500+	114.8	Minneapolis	Hennepin	N0BVE	OPEN	ON-AIR
-444.7250+	100.0	Minneapolis	Hennepin	KD5DLJ	OPEN	OFF-AIR
-444.8750+	DSTR	Minneapolis	Hennepin	KD0JOU	OPEN	ON-AIR
-1283.3000-	DSTR	Minneapolis	Hennepin	KD0JOU	OPEN	ON-AIR
-```
+| Frequency | License | Type | Tone | Alpha Tag | Description | Mode | Tag |  
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |  
+| 851.03750| WQLH842 | RM | 245 DPL | NOFD PG-DISP | NOFD Paging - Dispatch Simulcast | FM | Fire Dispatch |  
+| 463.05000 | WPTZ759 | RM | 151.4 PL | ACADIAN-UHF | EMS - Acadian Ambulance Service | FMN | EMS Dispatch | 
+| 461.27500 | WPVB506 | BM | 85.4 PL | Marriott	New Orleans Marriott Hotel | FMN | Business |
 
 dump1090 snippet for logging flights to CSV (courtesy of @schwanksta):
 ```
